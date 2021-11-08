@@ -11,7 +11,7 @@ public class P10_GeneratePermutations implements Problem {
     }
 
     public static void main(String[] args) {
-        P10_GeneratePermutations problem = new P10_GeneratePermutations("ABC");
+        P10_GeneratePermutations problem = new P10_GeneratePermutations("ABCD");
         problem.solve(problem::solution1);
         problem.solve(problem::solution2);
     }
@@ -20,15 +20,14 @@ public class P10_GeneratePermutations implements Problem {
         permuteAndPrint("", str);
     }
 
-    private void permuteAndPrint(String prefix, String str) {
-        int n = str.length();
+    private void permuteAndPrint(String current, String availablePool) {
+        int n = availablePool.length();
         if (n == 0) {
-            System.out.println(prefix + " ");
+            System.out.println(current + " ");
         } else {
             for (int i = 0; i < n; i++) {
-                String p1 = prefix + str.charAt(i);
-                String p2 = str.substring(0, i) + str.substring(i + 1, n);
-                permuteAndPrint(p1, p2);
+                permuteAndPrint(current + availablePool.charAt(i),
+                    availablePool.substring(0, i) + availablePool.substring(i + 1, n));
             }
         }
     }
