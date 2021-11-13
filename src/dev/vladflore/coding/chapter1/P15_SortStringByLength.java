@@ -31,7 +31,7 @@ public class P15_SortStringByLength implements Problem {
     }
 
     private void solution2() {
-        String[] res = null;
+        String[] res;
         if (sortDirection == SortDirection.ASC) {
             res = Arrays.stream(this.strings).sorted(Comparator.comparing(String::length)).toArray(String[]::new);
         } else {
