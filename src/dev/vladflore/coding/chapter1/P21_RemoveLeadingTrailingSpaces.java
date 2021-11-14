@@ -1,3 +1,5 @@
+package dev.vladflore.coding.chapter1;
+
 import java.util.Scanner;
 
 public class P21_RemoveLeadingTrailingSpaces {
